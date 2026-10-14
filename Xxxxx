@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMEER KHAN [2014] - VIP Sports Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-gold: #f59e0b;
+            --gold-gradient: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+            --telegram-blue: #0088cc;
+            --telegram-gradient: linear-gradient(135deg, #0088cc 0%, #005580 100%);
+            --dark-bg: #030712;
+            --card-bg: rgba(17, 24, 39, 0.75);
+            --accent-green: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            background-image: 
+                radial-gradient(at 10% 10%, rgba(245, 158, 11, 0.15) 0px, transparent 50%),
+                radial-gradient(at 90% 90%, rgba(0, 136, 204, 0.15) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, #0b0f19 0%, #030712 100%);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        .phone-mockup {
+            width: 100%;
+            max-width: 420px;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 32px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 
+                        0 0 30px rgba(245, 158, 11, 0.1);
+            position: relative;
+        }
+
+        /* Top Bar Header */
+        .top-header {
+            background: rgba(15, 23, 42, 0.8);
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .top-header .brand-title {
+            font-size: 18px;
+            font-weight: 800;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+
+        .top-header .logo-badge {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--primary-gold);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 12px;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-green);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px var(--accent-green);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        /* Hero Image Container */
+        .hero-card {
+            position: relative;
+            margin: 15px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 30%, rgba(3, 7, 18, 0.95) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 15px;
+        }
+
+        .hero-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero-sub {
+            font-size: 13px;
+            color: #9ca3af;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 4px;
+        }
+
+        /* Content Area */
+        .content-body {
+            padding: 0 15px 20px 15px;
+        }
+
+        .category-pills {
+            display: flex;
+            justify-content: space-between;
+            gap: 6px;
+            margin-bottom: 18px;
+        }
+
+        .pill {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 8px 4px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 12px;
+            color: #e5e7eb;
+            font-weight: 600;
+        }
+
+        .pill i {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 4px;
+            color: var(--primary-gold);
+        }
+
+        /* Main Telegram Button */
+        .cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--telegram-gradient);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 16px;
+            font-size: 17px;
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 25px rgba(0, 136, 204, 0.35);
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0, 136, 204, 0.5);
+        }
+
+        /* Gold Feature Card */
+        .vip-card {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(15, 23, 42, 0.8) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 15px;
+        }
+
+        .vip-card-title {
+            color: var(--primary-gold);
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #d1d5db;
+            font-size: 13.5px;
+            margin-bottom: 8px;
+        }
+
+        .feature-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-item i {
+            color: var(--accent-green);
+        }
+
+        /* Secondary Button */
+        .secondary-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 14px;
+            font-size: 15px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        .footer-bar {
+            text-align: center;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 11px;
+            color: #6b7280;
+        }
+
+        .footer-bar span {
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="phone-mockup">
+        <!-- Top Header -->
+        <div class="top-header">
+            <div class="brand-title">SAMEER KHAN</div>
+            <div class="logo-badge">
+                <span class="live-dot"></span> VIP 2014
+            </div>
+        </div>
+
+        <!-- Banner Image Box -->
+        <div class="hero-card">
+            <!-- অনলাইন থেকে স্পোর্টস এর প্রিমিয়াম পিকচার লোড হবে -->
+            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" alt="Sameer Khan Sports">
+            <div class="hero-overlay">
+                <div class="hero-title">OFFICIAL COMMUNITY HUB</div>
+                <div class="hero-sub">
+                    <i class="fa-solid fa-circle-check" style="color: #10b981;"></i> খেলার সেরা ইনসাইট ও আপডেট এক জায়গায়
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Body -->
+        <div class="content-body">
+
+            <!-- Sports Category Icons -->
+            <div class="category-pills">
+                <div class="pill"><i class="fa-solid fa-futbol"></i>ফুটবল</div>
+                <div class="pill"><i class="fa-solid fa-baseball-bat-ball"></i>ক্রিকেট</div>
+                <div class="pill"><i class="fa-solid fa-basketball"></i>বাস্কেটবল</div>
+                <div class="pill"><i class="fa-solid fa-table-tennis-paddle-ball"></i>টেনিস</div>
+            </div>
+
+            <!-- Join Telegram CTA -->
+            <a href="https://t.me/+drI5nQ9oa-41ZmFl" target="_blank" class="cta-button">
+                <i class="fa-brands fa-telegram" style="font-size: 22px;"></i> VIP কমিউনিটিতে যোগ দিন
+            </a>
+
+            <!-- VIP Features Card -->
+            <div class="vip-card">
+                <div class="vip-card-title">
+                    <i class="fa-solid fa-crown"></i> আমাদের প্রিমিয়াম সুবিধাসমূহ
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-circle-check"></i> ডেইলি এক্সক্লুসিভ প্রেডিকশন ও টিপস
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-circle-check"></i> নিখুঁত ম্যাচ অ্যানালাইসিস ও স্ট্র্যাটেজি
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-circle-check"></i> সমীর খানের সাথে সরাসরি কানেক্টেড থাকুন
+                </div>
+            </div>
+
+            <!-- Secondary Button -->
+            <a href="https://t.me/+drI5nQ9oa-41ZmFl" target="_blank" class="secondary-button">
+                <i class="fa-solid fa-bolt" style="color: #f59e0b;"></i> ফ্রি টিপস ও আপডেট পান
+            </a>
+
+            <!-- Footer -->
+            <div class="footer-bar">
+                Managed by <b>SAMEER KHAN Team</b> | <span><i class="fa-solid fa-shield-halved"></i> 100% Verified Access</span>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
